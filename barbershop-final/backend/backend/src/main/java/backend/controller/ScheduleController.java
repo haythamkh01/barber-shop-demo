@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/settings")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://haytham-barber.netlify.app")
 public class ScheduleController {
 
     private final ScheduleService service;

@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/gallery")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://haytham-barber.netlify.app")
 public class GalleryController {
 
     private final GalleryService galleryService;
