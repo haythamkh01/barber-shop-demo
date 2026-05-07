@@ -31,7 +31,7 @@ export default function AppointmentForm() {
   const fetchBookedTimes = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/appointments/${appointmentDate}`
+        `http://https://barber-shop-demo.onrender.com/api/appointments/${appointmentDate}`
       );
 
       if (!response.ok) {
@@ -46,12 +46,12 @@ export default function AppointmentForm() {
     }
   };
   useEffect(() => {
-  fetch("http://localhost:8080/api/settings/working-days")
+  fetch("https://barber-shop-demo.onrender.com/api/settings/working-days")
     .then((res) => res.json())
     .then((data) => setWorkingDays(data))
     .catch((err) => console.error("Error fetching working days:", err));
 
-  fetch("http://localhost:8080/api/settings/off-days")
+  fetch("https://barber-shop-demo.onrender.com/api/settings/off-days")
     .then((res) => res.json())
     .then((data) => setOffDays(data.map((item) => item.date)))
     .catch((err) => console.error("Error fetching off days:", err));
@@ -96,7 +96,7 @@ export default function AppointmentForm() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/api/appointments", {
+      const response = await fetch("https://barber-shop-demo.onrender.com/api/appointments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

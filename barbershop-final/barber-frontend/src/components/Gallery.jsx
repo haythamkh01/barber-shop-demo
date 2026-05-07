@@ -9,7 +9,7 @@ export default function Gallery() {
 
   const fetchImages = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/gallery");
+      const response = await fetch("https://barber-shop-demo.onrender.com/api/gallery");
       const data = await response.json();
       setImages(data);
     } catch (error) {
@@ -35,7 +35,7 @@ export default function Gallery() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://localhost:8080/api/gallery", {
+    const response = await fetch("https://barber-shop-demo.onrender.com/api/gallery", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ export default function Gallery() {
   const handleDeleteImage = async (id) => {
     const token = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:8080/api/gallery/" + id, {
+    const response = await fetch("https://barber-shop-demo.onrender.com/api/gallery/" + id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ const prevSlide = () => {
          visibleImages.map((image) => (
       <div className="gallery-card" key={image.id}>
         <img
-          src={"http://localhost:8080" + image.imageUrl}
+          src={"https://barber-shop-demo.onrender.com" + image.imageUrl}
           alt="Barber work"
           className="gallery-image"
         />

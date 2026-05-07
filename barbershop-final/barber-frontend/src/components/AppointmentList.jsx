@@ -57,11 +57,11 @@ const completedAppointmentsCount = appointments.filter(
 
 const fetchScheduleSettings = async () => {
   try {
-    const workingRes = await fetch("http://localhost:8080/api/settings/working-days");
+    const workingRes = await fetch("https://barber-shop-demo.onrender.com/api/settings/working-days");
     const workingData = await workingRes.json();
     setWorkingDays(workingData);
 
-    const offRes = await fetch("http://localhost:8080/api/settings/off-days");
+    const offRes = await fetch("https://barber-shop-demo.onrender.com/api/settings/off-days");
     const offData = await offRes.json();
     setOffDays(offData);
   } catch (error) {
@@ -77,7 +77,7 @@ const fetchScheduleSettings = async () => {
   const fetchAppointments = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8080/api/appointments", {
+      const response = await fetch("https://barber-shop-demo.onrender.com/api/appointments", {
         headers: {
           "Authorization": `Bearer ${token}`
         }
@@ -105,7 +105,7 @@ const handleToggleWorkingDay = async (id, enabled) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:8080/api/settings/working-days/" + id + "?enabled=" + !enabled,
+      "https://barber-shop-demo.onrender.com/api/settings/working-days/" + id + "?enabled=" + !enabled,
       {
         method: "PUT",
         headers: {
@@ -132,7 +132,7 @@ const handleAddOffDay = async () => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:8080/api/settings/off-days?date=" + newOffDay,
+      "https://barber-shop-demo.onrender.com/api/settings/off-days?date=" + newOffDay,
       {
         method: "POST",
         headers: {
@@ -158,7 +158,7 @@ const handleDeleteOffDay = async (id) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:8080/api/settings/off-days/" + id,
+      "https://barber-shop-demo.onrender.com/api/settings/off-days/" + id,
       {
         method: "DELETE",
         headers: {
@@ -188,7 +188,7 @@ const handleDeleteOffDay = async (id) => {
       const token = localStorage.getItem("token");
 
 const response = await fetch(
-  `http://localhost:8080/api/appointments/${id}`,
+  `https://barber-shop-demo.onrender.com/api/appointments/${id}`,
   {
     method: "DELETE",
     headers: {
