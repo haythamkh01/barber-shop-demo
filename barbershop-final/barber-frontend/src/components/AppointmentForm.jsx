@@ -31,7 +31,7 @@ export default function AppointmentForm() {
   const fetchBookedTimes = async () => {
     try {
       const response = await fetch(
-        `http://https://barber-shop-demo.onrender.com/api/appointments/${appointmentDate}`
+        `https://barber-shop-demo.onrender.com/api/appointments/${appointmentDate}`
       );
 
       if (!response.ok) {
